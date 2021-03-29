@@ -1,0 +1,197 @@
+.theme_light {
+  --minBar-bg: radial-gradient(2408.25% 2730.55% at 89.06% 78.28%, rgba(250, 250, 250, 0.6) 0%, rgba(250, 250, 250, 0.6) 100%);
+  --minBar-box-sh: 1px 1px 16px 0px rgba(106, 106, 106, 0.2) inset, -1px 0px 2px 0px rgba(250, 250, 250, 0.2) inset;
+  --midBar-bg: radial-gradient(2408.25% 2730.55% at 89.06% 78.28%, rgba(250, 250, 250, 0.8) 0%, rgba(250, 250, 250, 0.8) 100%);
+  --midBar-box-sh: 1px 1px 16px 0px rgba(106, 106, 106, 0.3) inset, -1px 0px 2px 0px rgba(250, 250, 250, 0.2) inset;
+  --maxBar-bg: radial-gradient(68.1% 68.1% at 4.41% 31.9%, #FFF6DD 8.72%, #FFFEFA 100%);
+  --maxBar-box-sh:  0px 0px 20px 0px rgba(255, 176, 57, 0.4) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.5) inset;
+  --extraBar-bg: radial-gradient(66.02% 86.49% at -16.18% 13.51%, rgba(255, 186, 6, 0.85) 0%, #FFF2AD 100%);
+  --extraBar-box-sh:0px 0px 20px 0px rgba(255, 176, 57, 0.4) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.5) inset;
+  --svg-min-col: url('img/min-light.svg');
+  --svg-mid-col: url('img/mid-light.svg');
+  --svg-max-col: url('img/max-light.svg');
+  --svg-extra-col: url('img/extra-light.svg');
+  --svg-timeBar: url('img/minBar-bg-light.svg');
+}
+
+.activity {
+  height: 100vh;
+  background: var(--main-bg-color);
+
+  &-titlesWrapper {
+    margin-top: 1.25rem;
+    width: 35.25rem;
+    margin-bottom: 2.063rem;
+  }
+
+  &-title {
+    color: var(--text-color);
+    font-family: Roboto-Bold;
+    font-size: 1.875rem;
+    line-height: 2rem
+  }
+
+  &-subtitle {
+    margin-top: 0.5rem;
+    color: var(--subtitle-text-color);
+    font-family: Roboto-Medium;
+    font-size: 1rem;
+    line-height: 1.125rem
+  }
+
+  &-heatMap {
+    margin-right: 0.813rem;
+    margin-top: 1rem;
+  }
+
+  &-24hours, &-12hoursA, &-12hoursB {
+    position: relative;
+  }
+
+  &-12hoursA, &-12hoursB {
+    display: none;
+  }
+
+  &-dayOfWeek {
+    margin-top: -1.313rem;
+  }
+
+  &-dayOfWeek:nth-child(even) {
+    margin-left: 2.125rem;
+  }
+
+  &-item {
+    position: relative;
+    width: 2.125rem;
+    height: 2.125rem;
+    margin-left: -0.031rem;
+  }
+
+  &-img {
+    position: absolute;
+  }
+
+  &-legend {
+    margin-bottom: 3.625rem;
+    width: 20.75rem;
+    color: var(--subtitle-text-color);
+    font-family: Roboto-Medium;
+    font-size: 1rem;
+    line-height: 1.125rem
+  }
+
+  &-timeBar, &-minBar, &-midBar, &-maxBar, &-extraBar {
+    width: 3.75rem;
+    height: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-1HoursScale, &-2HoursScale {
+    width: 3.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  &-timeBar {
+    background: var(--svg-timeBar) no-repeat;
+    width: 3.75rem;
+    height: 0.75rem;
+    background-size: contain;
+  }
+
+  &-minBar {
+    background: var(--minBar-bg);
+    box-shadow: var(--minBar-box-sh);
+    border-radius: 0.125rem
+  }
+
+  &-midBar {
+    background: var(--midBar-bg);
+    box-shadow: var(--midBar-box-sh);
+    border-radius: 0.125rem
+  }
+
+  &-maxBar {
+    background: var(--maxBar-bg);
+    box-shadow: var(--maxBar-box-sh);
+    border-radius: 0.125rem
+  }
+
+  &-extraBar {
+    background: var(--extraBar-bg);
+    box-shadow: var(--extraBar-box-sh);
+    border-radius: 0.125rem
+  }
+
+  &-1HoursScale {
+    display: none;
+  }
+
+  &-2HoursScale {
+    display: block;
+  }
+}
+
+@media (orientation: portrait) {
+  .activity {
+    align-items: start;
+
+    &-titlesWrapper {
+      text-align: start;
+      width: 18.75rem;
+      margin-left: 1.5rem;
+      margin-bottom: unset;
+    }
+
+    &-24hours {
+      display: none;
+    }
+
+    &-heatMap {
+      display: flex;
+      margin: 0 auto;
+    }
+
+    &-dayOfWeek {
+      margin-top: unset;
+      display: flex;
+    }
+
+    &-12hoursA, &-12hoursB {
+      display: block;
+    }
+
+    &-dayOfWeek:nth-child(1) {
+      margin-left: 0;
+    }
+
+    &-dayOfWeek, &-dayOfWeek:nth-child(even) {
+      margin-top: unset;
+      margin-left: -1.25rem;
+    }
+
+    &-12hoursB {
+      margin-top: 1rem;
+      margin-left: -1.438rem;
+    }
+
+    &-item {
+      margin-top: -0.625rem;
+      width: 2.688rem;
+      height: 2.688rem;
+    }
+
+    &-legend {
+      margin: 0 auto 1.5rem;
+      text-align: unset;
+    }
+
+    &-1HoursScale {
+      display: block;
+    }
+
+    &-2HoursScale {
+      display: none;
+    }
+
+  }
+}

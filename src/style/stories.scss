@@ -1,0 +1,124 @@
+@import "partials/utils.scss";
+@import "partials/leaders.scss";
+@import "partials/fonts.scss";
+@import "partials/vote.scss";
+@import "partials/chart.scss";
+@import "partials/activity.scss";
+@import "partials/diagram.scss";
+
+.theme_dark {
+  --main-bg-color: radial-gradient(70.24% 70.24% at 49.87% 29.76%, rgba(19, 14, 0, 0.9) 0%, #000000 100%);
+  --subtitle-text-color: #918F8A;
+  --text-color: #FCFBF7;
+  --resultBar-bg: linear-gradient(180deg, rgba(0, 0, 0, 0) -2.22%, rgba(0, 0, 0, 0.8) 100%),
+  radial-gradient(149.08% 95.38% at 38.75% 71.48%, #000000 0%, #231900 0.01%, #4D4D4D 100%);
+  --resultBar-box-sh: inset -1px 1px 1px rgba(255, 255, 255, 0.2), inset 2px 2px 16px rgba(103, 103, 103, 0.6);
+  --resultBar-bg-first-place: radial-gradient(91.67% 122.17% at 69.17% -11.17%, #FFA300 0%, #2D1C00 100%);
+  --resultBar-box-sh-first-place: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 6px 15px rgba(255, 162, 0, 0.4);
+  --avatar-filter: grayscale(100%);
+  --item-radio-bg-checked: radial-gradient(91.67% 122.17% at 69.17% -11.17%, #FFA300 0%, #2D1C00 100%);
+  --item-radio-box-sh-checked: 0px 6px 15px 0px rgba(255, 162, 0, 0.4) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.4) inset;
+  --label-hover-bg: radial-gradient(85.62% 148.33% at 49.85% 100%, rgba(68, 58, 42, 0.7864) 0%, rgba(0, 0, 0, 0.8) 100%);
+  --label-hover-box-sh: 2px 2px 16px 0px rgba(255,255,255, 0.1) inset, -1px 1px 1px 0px rgba(255,255,255, 0.2) inset;
+  --svg-button-fill-disabled: #C4C4C4;
+  --svg-button-fill: #FCFBF7;
+  --svg-button-hover: #C4C4C4;
+  --underline-color: #918F8A;
+  --chart-column-box-sh-active: 0px 6px 15px 0px rgba(255, 162, 0, 0.5) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.4) inset;
+  --chart-column-bg-active: radial-gradient(81.14% 100% at 50% 0%, #FFA300 0%, #2D1C00 100%);
+  --chart-column-bg: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%),
+  radial-gradient(149.08% 93.3% at 38.75% 72.1%, #000000 0%, #231900 0.01%, #4D4D4D 100%);
+  --chart-column-box-sh: 2px 2px 16px 0px rgba(103, 103, 103, 0.6) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.2) inset;
+  --separator-color: #918F8A;
+  --minBar-bg: radial-gradient(3906.1% 3815.36% at 89.06% 78.28%, rgba(19, 17, 16, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%);
+  --minBar-box-sh: 1px 1px 16px 0px rgba(112, 102, 94, 0.2) inset, -1px 0px 2px 0px rgba(255, 255, 255, 0.2) inset;
+  --midBar-bg: radial-gradient(5752.25% 5190.32% at 74.43% 60.32%, rgba(0, 0, 0, 0.9) 0%, rgba(35, 22, 0, 0.9) 0.01%, rgba(112, 92, 94, 0.9) 100%);
+  --midBar-box-sh: 2px 2px 10px 0px rgba(93, 116, 141, 0.6) inset, -1px 0px 1px 0px rgba(255, 255, 255, 0.2) inset;
+  --maxBar-bg: radial-gradient(5528.36% 3005.63% at 74.43% 75.84%, rgba(0, 0, 0, 0.9) 0%, rgba(33, 22, 2, 0.9) 0.01%, rgba(172, 113, 9, 0.9) 100%);
+  --maxBar-box-sh: 2px 2px 10px 0px rgba(242, 159, 13, 0.2) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.2) inset;
+  --extraBar-bg: radial-gradient(2258.03% 620.37% at 83.33% 88.95%, #201502 0%, #C7830A 100%);
+  --extraBar-box-sh: 2px 2px 10px 0px rgba(242, 159, 13, 0.9) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.2) inset;
+  --svg-min-col: url('img/min-dark.svg');
+  --svg-mid-col: url('img/mid-dark.svg');
+  --svg-max-col: url('img/max-dark.svg');
+  --svg-extra-col: url('img/extra-dark.svg');
+  --svg-timeBar: url('img/minBar-bg.svg');
+  --dot1-bg: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(255, 163, 0, 0.8) 71.88%, rgba(91, 58, 0, 0.8) 100%);
+  --dot1-box-shadow: 0px 0px 20px 0px rgba(255, 162, 0, 0.9) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.5) inset,
+  0px 0px 20px -8px rgba(248, 158, 0, 0.2);
+  --dot2-bg: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(99, 63, 0, 0.5) 72.92%, rgba(15, 9, 0, 0.5) 100%);
+  --dot2-box-shadow: 0px 0px 20px 0px rgba(202, 129, 0, 0.9) inset, -1px 1px 1px 0px rgba(255, 255, 255, 0.5) inset,
+  0px 0px 20px -8px rgba(147, 93, 0, 0.2);
+  --dot4-bg: rgba(151, 151, 151, 0.5), rgba(41, 41, 41, 0.5);
+  --dot4-box-shadow: -1px 1px 1px 0px rgba(255, 255, 255, 0.5) inset;
+  --dot3-bg: radial-gradient(100% 100% at 50% 0%, rgba(62, 62, 62, 0.5) 0%, rgba(40, 40, 40, 0.5) 100%);
+  --dot3-box-shadow: -1px 1px 1px 0px rgba(255, 255, 255, 0.5) inset;
+  --itemsWrapper-border-bottom: rgba(145, 143, 138, 1);
+  --filter0: url(#filter0_dii_dark);
+  --paint0: url(#paint0_radial_dark);
+  --filter1: url(#filter1_dii_dark);
+  --paint1: url(#paint1_radial_dark);
+  --filter2: url(#filter2_dii_dark);
+  --paint2: url(#paint2_radial_dark);
+  --filter3: url(#filter3_dii_dark);
+  --paint3: url(#paint3_radial_dark);
+  --opacity_0: 0.5;
+  --opacity_1: 0.5;
+  --opacity_2: 0.5;
+  --opacity_3: 0.8;
+  --favicon: "img/favicon_dark.png";
+}
+
+.theme_light {
+  --favicon: "img/favicon_light.png"
+}
+
+  html {
+    font-size: 16px;
+  }
+
+@media (orientation: portrait) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-height: 769px) {
+  html {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait), (max-height: 768px) and (orientation: landscape) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 429px) and (orientation: portrait), (max-height: 429px) and (orientation: landscape) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 415px) and (orientation: portrait), (max-height: 415px) and (orientation: landscape) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 376px) and (orientation: portrait), (max-height: 376px) and (orientation: landscape) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 321px) and (orientation: portrait), (max-height: 321px) and (orientation: landscape) {
+  html {
+    font-size: 13px;
+  }
+}
+
+body {
+  margin: 0;
+}
