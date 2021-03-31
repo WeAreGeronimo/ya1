@@ -8,7 +8,7 @@ window.renderTemplate = function(alias, data) {
 
     if(alias === "leaders") {
         function generateColumns() {
-            data.users.sort((a, b) => b.valueText - a.valueText);
+            data.users.sort((a, b) => Number(b.valueText.replace(/\D+/g,"")) - Number(a.valueText.replace(/\D+/g,"")));
             let correctsIndexs = [3, 4, 2, 5, 1];
 
             for(let i = 0; i < data.users.length; i++) {
@@ -222,9 +222,9 @@ window.renderTemplate = function(alias, data) {
 
 
         let column12Hours = {};
-        let newArray = [];
+
         for(let key in data.data) {
-            newArray = [];
+            let newArray = [];
             for (let m = 0; m < (data.data[key].length); m = m + 2) {
                 newArray.push(data.data[key][m] + data.data[key][m + 1]);
             }
