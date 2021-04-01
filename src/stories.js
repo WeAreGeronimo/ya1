@@ -55,17 +55,20 @@ window.renderTemplate = function(alias, data) {
                     usersStack[j].userLabel = j;
                 }
 
+            }
 
+            console.log("usersStack");
+            console.log(usersStack);
             mostVotedMember =
                 `<div class="leaders-votedUsersWrapper">
                    <div class="leaders-emoji">${staticEmoji}</div>
-                   <img class="leaders-avatar" src='${avatarSrc}${votedUser.avatar}'>
-                   <div class="leaders-name">${votedUser.name}</div>
-                   <div class="leaders-commitsRes">${votedUser.valueText}</div>
+                   <img class="leaders-avatar" src='${avatarSrc}${votedUser ? votedUser.avatar : usersStack[0].avatar}'>
+                   <div class="leaders-name">${votedUser ? votedUser.name : usersStack[0].name}</div>
+                   <div class="leaders-commitsRes">${votedUser ? votedUser.valueText : usersStack[0].valueText}</div>
                    <div class="leaders-underline"></div>
-                   <span class="leaders-position">${votedUser.positionInTop}</span>
+                   <span class="leaders-position">${votedUser ? votedUser.positionInTop : usersStack[0].positionInTop}</span>
                    </div>`;
-            }
+
 
             return usersStack.map((user, index) => {
               return (`<div class="leaders-column text-a-center">
@@ -77,7 +80,7 @@ window.renderTemplate = function(alias, data) {
                           </div>
                           <div class="leaders-resultBar flex j-c-space-between flex-d-column">
                               <span class="leaders-position">${user.positionInTop}</span>
-                              ${(index == 2) && (!votedUserInFirstFourPlaces) ? mostVotedMember : ""}
+                              ${(index == 2) ? mostVotedMember : ""}
                           </div>
                       </div>`);
             })
