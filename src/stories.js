@@ -9,30 +9,63 @@ window.renderTemplate = function(alias, data) {
     if(alias === "leaders") {
         function generateColumns() {
             data.users.sort((a, b) => Number(b.valueText.replace(/\D+/g,"")) - Number(a.valueText.replace(/\D+/g,"")));
-            let correctsIndexs = [3, 4, 2, 5, 1];
+            let correctsIndexes = [3, 4, 2, 5, 1];
+            let votedUser;
+            let votedUserInFirstFourPlaces = true;
+            let idHolder;
+            if ("selectedUserId" in data) { //Есть ли человек за которого проголосовали?
+                idHolder = data["selectedUserId"]; //если есть, запишем айди
+                console.log("selectedUserId" in data);
+                console.log("idHolder " + idHolder);
+
+                for (let i = 0; i < 3; i++) { // проверим, он в первых четырех позициях?
+                    idHolder == data.users[i].id ? (votedUserInFirstFourPlaces = true) : (votedUserInFirstFourPlaces = false); // если да, ничего не меняем
+                };
+
+                if(!votedUserInFirstFourPlaces) {
+                    for (let i = 0; i < data.users.length; i++) {
+                        console.log(i);
+                        if(data.users[i].id == idHolder) {
+                            votedUser = data.users[i];
+                            console.log(votedUser)
+                            break;
+                        }
+                    }
+                }
+            };
 
             for(let i = 0; i < data.users.length; i++) {
                 data.users[i].positionInTop = i + 1;
-                data.users[i].columnNumber = correctsIndexs[i];
+                data.users[i].columnNumber = correctsIndexes[i];
             }
 
             data.users.sort((a, b) => a.columnNumber - b.columnNumber);
             let usersStack = [];
+            let mostVotedMember;
+            if(votedUserInFirstFourPlaces){
+                for (let j = 0; j < 5; j++) {
+                    usersStack.push(data.users[j]);
+                    usersStack[j].userLabel = j;
+                }
+            } else if(!votedUserInFirstFourPlaces) {
+                usersStack.push(votedUser);
+                usersStack[0].userLabel = 0;
+                for (let j = 1; j < 5; j++) {
+                    usersStack.push(data.users[j]);
+                    usersStack[j].userLabel = j;
+                }
 
-            for(let j = 0; j < 5; j++){
-                usersStack.push(data.users[j]);
-                usersStack[j].userLabel = j;
-            }
 
-            let mostVotedMember =
+            mostVotedMember =
                 `<div class="leaders-votedUsersWrapper">
                    <div class="leaders-emoji">${staticEmoji}</div>
-                   <img class="leaders-avatar" src='${avatarSrc}${usersStack[0].avatar}'>
-                   <div class="leaders-name">${usersStack[0].name}</div>
-                   <div class="leaders-commitsRes">${usersStack[0].valueText}</div>
+                   <img class="leaders-avatar" src='${avatarSrc}${votedUser.avatar}'>
+                   <div class="leaders-name">${votedUser.name}</div>
+                   <div class="leaders-commitsRes">${votedUser.valueText}</div>
                    <div class="leaders-underline"></div>
-                   <span class="leaders-position">${usersStack[0].positionInTop}</span>
+                   <span class="leaders-position">${votedUser.positionInTop}</span>
                    </div>`;
+            }
 
             return usersStack.map((user, index) => {
               return (`<div class="leaders-column text-a-center">
@@ -44,7 +77,7 @@ window.renderTemplate = function(alias, data) {
                           </div>
                           <div class="leaders-resultBar flex j-c-space-between flex-d-column">
                               <span class="leaders-position">${user.positionInTop}</span>
-                              ${index == 2 ? mostVotedMember : ""}
+                              ${(index == 2) && (!votedUserInFirstFourPlaces) ? mostVotedMember : ""}
                           </div>
                       </div>`);
             })
