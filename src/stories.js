@@ -11,18 +11,25 @@ window.renderTemplate = function(alias, data) {
             data.users.sort((a, b) => Number(b.valueText.replace(/\D+/g,"")) - Number(a.valueText.replace(/\D+/g,"")));
             let correctsIndexes = [3, 4, 2, 5, 1];
             let votedUser;
-            let votedUserInFirstFourPlaces = true;
+            let votedUserInFirstFivePlaces = true;
             let idHolder;
+            let mostVotedMember;
+            let istVoteResultAlias = false;
             if ("selectedUserId" in data) { //Есть ли человек за которого проголосовали?
                 idHolder = data["selectedUserId"]; //если есть, запишем айди
+                istVoteResultAlias = true;
                 console.log("selectedUserId" in data);
                 console.log("idHolder " + idHolder);
 
-                for (let i = 0; i < 3; i++) { // проверим, он в первых четырех позициях?
-                    idHolder == data.users[i].id ? (votedUserInFirstFourPlaces = true) : (votedUserInFirstFourPlaces = false); // если да, ничего не меняем
+                for (let i = 0; i < 5; i++) { // проверим, он в первых пяти позициях?
+                    if(idHolder == data.users[i].id ) {
+                        votedUserInFirstFivePlaces = true;
+                        break;
+                    }
+                    votedUserInFirstFivePlaces = false;
                 };
 
-                if(!votedUserInFirstFourPlaces) {
+                if(!votedUserInFirstFivePlaces) {
                     for (let i = 0; i < data.users.length; i++) {
                         console.log(i);
                         if(data.users[i].id == idHolder) {
@@ -41,13 +48,14 @@ window.renderTemplate = function(alias, data) {
 
             data.users.sort((a, b) => a.columnNumber - b.columnNumber);
             let usersStack = [];
-            let mostVotedMember;
-            if(votedUserInFirstFourPlaces){
+
+            if(votedUserInFirstFivePlaces) {
                 for (let j = 0; j < 5; j++) {
                     usersStack.push(data.users[j]);
                     usersStack[j].userLabel = j;
                 }
-            } else if(!votedUserInFirstFourPlaces) {
+
+            } else if(!votedUserInFirstFivePlaces) {
                 usersStack.push(votedUser);
                 usersStack[0].userLabel = 0;
                 for (let j = 1; j < 5; j++) {
@@ -57,17 +65,19 @@ window.renderTemplate = function(alias, data) {
 
             }
 
-            console.log("usersStack");
-            console.log(usersStack);
             mostVotedMember =
                 `<div class="leaders-votedUsersWrapper">
                    <div class="leaders-emoji">${staticEmoji}</div>
                    <img class="leaders-avatar" src='${avatarSrc}${votedUser ? votedUser.avatar : usersStack[0].avatar}'>
-                   <div class="leaders-name">${votedUser ? votedUser.name : usersStack[0].name}</div>
+                   <div class="leaders-name">${votedUser ? votedUser.name : usersStack[0].name }</div>
                    <div class="leaders-commitsRes">${votedUser ? votedUser.valueText : usersStack[0].valueText}</div>
                    <div class="leaders-underline"></div>
                    <span class="leaders-position">${votedUser ? votedUser.positionInTop : usersStack[0].positionInTop}</span>
                    </div>`;
+
+            console.log("usersStack");
+            console.log(usersStack);
+
 
 
             return usersStack.map((user, index) => {
@@ -80,7 +90,7 @@ window.renderTemplate = function(alias, data) {
                           </div>
                           <div class="leaders-resultBar flex j-c-space-between flex-d-column">
                               <span class="leaders-position">${user.positionInTop}</span>
-                              ${(index == 2) ? mostVotedMember : ""}
+                              ${(index == 2) && istVoteResultAlias && mostVotedMember ? mostVotedMember : ""}
                           </div>
                       </div>`);
             })
