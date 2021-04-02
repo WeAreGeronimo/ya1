@@ -139,7 +139,7 @@ window.renderTemplate = function(alias, data) {
 
             return usersStack.map((user, index) => {
                 return (`
-                <div class="vote-item flex">
+                <div class="vote-item flex text-a-center">
                     <input class="vote-itemRadio" ${isChecked(user.id, user.userLabel)} name="myVoice" type="radio" value="${user.id}" id='member${user.userLabel}'>
                     <label class="vote-label" for="member${user.userLabel}">
                     <div class="vote-emoji">${staticEmoji}</div>
