@@ -228,7 +228,7 @@ window.renderTemplate = function(alias, data) {
                 <div class="chart-leaders flex j-c-space-between">
                     <div class="chart-user flex">
                         <img class="chart-avatar" src='${avatarSrc}${data.users[0].avatar}'>
-                        <div class="chart-usersInfo">
+                        <div class="chart-usersInfo flex flex-d-column j-c-center">
                             <div class="chart-name">${data.users[0].name}</div>
                             <div class="chart-count">${data.users[0].valueText}</div>
                         </div>
