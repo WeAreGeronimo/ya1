@@ -341,7 +341,7 @@ window.renderTemplate = function(alias, data) {
                     sizeH: {
                         h: 2.563,
                         w: 2.125,
-                        'correctPos' : -0.5,
+                        'correctPos' : -0.438,
                     },
                     sizeV: {
                         h: 3.375,
@@ -360,7 +360,7 @@ window.renderTemplate = function(alias, data) {
                     sizeH: {
                         h: 3.563,
                         w: 2.125,
-                        'correctPos' : -1.5,
+                        'correctPos' : -1.438,
                     },
                     sizeV: {
                         h: 4.625,
@@ -379,7 +379,7 @@ window.renderTemplate = function(alias, data) {
                     sizeH: {
                         h: 4.563,
                         w: 2.125,
-                        'correctPos' : -2.500,
+                        'correctPos' : -2.438,
                     },
                     sizeV: {
                         h: 5.938,
