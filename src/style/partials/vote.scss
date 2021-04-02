@@ -107,12 +107,12 @@
   }
 
   &-content {
-    margin: 0 auto 3px;
+    margin: 0 auto 5px;
     display: grid;
     grid-template-columns: repeat(2, 1fr) repeat(1, 0.6fr) repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 18.250rem;
-    width: 609px;
+    width: 610px;
     justify-items: center;
     align-items: center;
   }
