@@ -515,27 +515,7 @@ window.renderTemplate = function(alias, data) {
 
         let svgDiagram =
             `<svg class="diagram-svg" viewBox="0 0 262 262" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="var(--filter1)">
-            <circle cx="132" cy="132" r="102.1" fill="transparent" stroke="var(--paint2)" stroke-width="35.9" opacity="var(--opacity_1)"
-                    stroke-dasharray="${dataCategCombined[3].dashArrayValues.first} ${dataCategCombined[3].dashArrayValues.second}" 
-                    stroke-dashoffset="${dataCategCombined[3].initialOffsetEl}"></circle>
-        </g>
-        <g filter="var(--filter2)">
-            <circle cx="132" cy="132" r="102.1" fill="transparent" stroke="var(--paint2)" stroke-width="35.9" opacity="var(--opacity_2)"
-                    stroke-dasharray="${dataCategCombined[2].dashArrayValues.first} ${dataCategCombined[2].dashArrayValues.second}" 
-                    stroke-dashoffset="${dataCategCombined[2].initialOffsetEl}"></circle>
-        </g>
-        <g filter="var(--filter3)">
-            <circle cx="132" cy="132" r="102.1" fill="transparent" stroke="var(--paint3)" stroke-width="35.9" opacity="var(--opacity_3)"
-                    stroke-dasharray="${dataCategCombined[0].dashArrayValues.first} ${dataCategCombined[0].dashArrayValues.second}" 
-                    stroke-dashoffset="${dataCategCombined[0].initialOffsetEl}"></circle>
-        </g>
-        <g filter=var(--filter0)>
-            <circle cx="132" cy="132" r="102.1" fill="transparent" stroke="var(--paint0)" stroke-width="35.9" opacity="var(--opacity_0)"
-                    stroke-dasharray="${dataCategCombined[1].dashArrayValues.first} ${dataCategCombined[1].dashArrayValues.second}" 
-                    stroke-dashoffset="${dataCategCombined[1].initialOffsetEl}"></circle>
-        </g>
-        <defs>
+         <defs>
             <filter id="filter0_dii_dark" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                 <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
@@ -722,6 +702,24 @@ window.renderTemplate = function(alias, data) {
                 <stop offset="1" stop-color="#5B3A00"></stop>
             </radialGradient>
         </defs>
+        <g>
+            <circle cx="132" cy="132" r="110" fill="none" filter="var(--filter1)" stroke="var(--paint2)" stroke-width="36" opacity="var(--opacity_1)"
+                    stroke-dasharray="${dataCategCombined[3].dashArrayValues.first} ${dataCategCombined[3].dashArrayValues.second}" 
+                    stroke-dashoffset="${dataCategCombined[3].initialOffsetEl}"></circle>
+        
+            <circle cx="132" cy="132" r="110" fill="none" filter="var(--filter2)" stroke="var(--paint2)" stroke-width="36" opacity="var(--opacity_2)"
+                    stroke-dasharray="${dataCategCombined[2].dashArrayValues.first} ${dataCategCombined[2].dashArrayValues.second}" 
+                    stroke-dashoffset="${dataCategCombined[2].initialOffsetEl}"></circle>
+  
+            <circle cx="132" cy="132" r="110" fill="none" filter="var(--filter3)" stroke="var(--paint3)" stroke-width="36" opacity="var(--opacity_3)"
+                    stroke-dasharray="${dataCategCombined[0].dashArrayValues.first} ${dataCategCombined[0].dashArrayValues.second}" 
+                    stroke-dashoffset="${dataCategCombined[0].initialOffsetEl}"></circle>
+                    
+            <circle cx="132" cy="132" r="110" fill="none" filter=var(--filter0) stroke="var(--paint0)" stroke-width="36" opacity="var(--opacity_0)"
+                    stroke-dasharray="${dataCategCombined[1].dashArrayValues.first} ${dataCategCombined[1].dashArrayValues.second}" 
+                    stroke-dashoffset="${dataCategCombined[1].initialOffsetEl}"></circle> </g>
+        </g>
+  
     </svg>`
 
         result =
