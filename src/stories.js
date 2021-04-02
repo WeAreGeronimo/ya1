@@ -326,8 +326,8 @@ window.renderTemplate = function(alias, data) {
                         'correctPos' : 0,
                     },
                     sizeV: {
-                        h: 2.688,
-                        w: 2.688,
+                        h: 2.733,
+                        w: 2.733,
                         'correctPos' : 0,
                     }
                 }
@@ -344,8 +344,8 @@ window.renderTemplate = function(alias, data) {
                         'correctPos' : -0.438,
                     },
                     sizeV: {
-                        h: 3.375,
-                        w: 2.688,
+                        h: 3.376,
+                        w: 2.733,
                         'correctPos' : -0.563,
                     }
                 }
@@ -363,8 +363,8 @@ window.renderTemplate = function(alias, data) {
                         'correctPos' : -1.438,
                     },
                     sizeV: {
-                        h: 4.625,
-                        w: 2.688,
+                        h: 4.662,
+                        w: 2.733,
                         'correctPos' : -1.875,
                     }
                 }
@@ -382,8 +382,8 @@ window.renderTemplate = function(alias, data) {
                         'correctPos' : -2.438,
                     },
                     sizeV: {
-                        h: 5.938,
-                        w: 2.688,
+                        h: 5.949,
+                        w: 2.733,
                         'correctPos' : -3.125,
                     }
                 }
