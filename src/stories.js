@@ -194,13 +194,11 @@ window.renderTemplate = function(alias, data) {
                 if (chartStack[m].value > maxValue) maxValue = chartStack[m].value;
                 if (chartStack[m].value < minValue && chartStack[m].value != 0) minValue = chartStack[m].value;
             }
-            // 69% высоты в верстке = 270px, максимальному значению по макету и = 100% относительной шкалы измерения
-            //
 
             function getColumnHeight(value, maxValue) {
                 if(value != 0) {
                     let columnHeightRelativeScale = (value * 100) / maxValue;
-                    let columnHeight = (columnHeightRelativeScale) * 69 / 100;
+                    let columnHeight = (columnHeightRelativeScale) * 67.5 / 100;
                     return columnHeight.toFixed(2);
                 }
                 return 0;
