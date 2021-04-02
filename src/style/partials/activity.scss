@@ -42,6 +42,7 @@
   &-heatMap {
     margin-right: 0.938rem;
     margin-top: 1rem;
+
   }
 
   &-24hours, &-12hoursA, &-12hoursB {
@@ -133,7 +134,7 @@
 @media (orientation: portrait) {
   .activity {
     align-items: start;
-
+    justify-content: unset;
     &-titlesWrapper {
       text-align: start;
       width: 18.75rem;
@@ -147,7 +148,7 @@
 
     &-heatMap {
       display: flex;
-      margin: 0 auto;
+      margin: 3.750rem auto 3.125rem;
     }
 
     &-dayOfWeek {
@@ -165,16 +166,16 @@
 
     &-dayOfWeek, &-dayOfWeek:nth-child(even) {
       margin-top: unset;
-      margin-left: -1.25rem;
+      margin-left: -1.188rem;
     }
 
     &-12hoursB {
-      margin-top: 1rem;
+      margin-top: 1.012rem;
       margin-left: -1.438rem;
     }
 
     &-item {
-      margin-top: -0.625rem;
+      margin-top: -0.594rem;
       width: 2.688rem;
       height: 2.688rem;
     }

@@ -345,8 +345,8 @@ window.renderTemplate = function(alias, data) {
                     },
                     sizeV: {
                         h: 3.375,
-                        w: 2.734,
-                        'correctPos' : -0.625,
+                        w: 2.688,
+                        'correctPos' : -0.563,
                     }
                 }
                 return obj;
@@ -365,7 +365,7 @@ window.renderTemplate = function(alias, data) {
                     sizeV: {
                         h: 4.625,
                         w: 2.688,
-                        'correctPos' : -1.938,
+                        'correctPos' : -1.875,
                     }
                 }
                 return obj;
@@ -384,7 +384,7 @@ window.renderTemplate = function(alias, data) {
                     sizeV: {
                         h: 5.938,
                         w: 2.688,
-                        'correctPos' : -3.188,
+                        'correctPos' : -3.125,
                     }
                 }
                 return obj;
@@ -411,7 +411,7 @@ window.renderTemplate = function(alias, data) {
                                                    width: ${settings(value).sizeV.w}rem;
                                                    height: ${settings(value).sizeV.h}rem;
                                                    z-index: ${i}; background: ${settings(value).src} no-repeat;
-                                                   background-size: cover;"></div></div>`
+                                                   background-size: contain;"></div></div>`
                                     }}).join("")}</div>
                             <div class="activity-12hoursB">
                                 ${arrayElement[1].map((value, i) => {
@@ -423,7 +423,7 @@ window.renderTemplate = function(alias, data) {
                                                    width: ${settings(value).sizeV.w}rem; 
                                                    height: ${settings(value).sizeV.h}rem; 
                                                    z-index: ${i}; background: ${settings(value).src} no-repeat; 
-                                                   background-size: cover;"></div></div>`
+                                                   background-size: contain;"></div></div>`
                                     }}).join("")}</div>
                             <div class="activity-24hours flex j-c-center">
                                 ${arrayElement[2].map((value, i) => {
