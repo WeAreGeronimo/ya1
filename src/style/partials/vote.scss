@@ -266,7 +266,9 @@
       grid-column: 2/3;
       grid-row: 7/17;
       margin: 0.625rem 0 0;
-
+      .vote-avatar {
+        margin: 1.313rem auto .125rem;
+      }
     }
 
     &-item:nth-child(5) {
@@ -287,7 +289,9 @@
       grid-column: 2/3;
       grid-row: 17/29;
       margin: 0 0 0.813rem;
-
+      .vote-avatar {
+        margin: 1.313rem auto .125rem;
+      }
     }
 
     &-item:nth-child(8) {
