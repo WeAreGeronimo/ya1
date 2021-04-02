@@ -107,12 +107,12 @@
   }
 
   &-content {
-    margin: 0 auto 2px;
+    margin: 0 auto 3px;
     display: grid;
     grid-template-columns: repeat(2, 1fr) repeat(1, 0.6fr) repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 18.250rem;
-    width: 606px;
+    width: 609px;
     justify-items: center;
     align-items: center;
   }
@@ -131,7 +131,7 @@
     margin: 0 auto;
 
     .vote-svgButton {
-      margin-bottom: 24px;
+      margin-bottom: 23px;
     }
 
     &:hover {
