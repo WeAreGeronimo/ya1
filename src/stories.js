@@ -190,7 +190,7 @@ window.renderTemplate = function(alias, data) {
 
             let minValue = chartStack[0].value;
             let maxValue = minValue;
-            for (let m = 1; m < chartStack.length; m++) {
+            for (let m = 0; m < chartStack.length; m++) {
                 if (chartStack[m].value > maxValue) maxValue = chartStack[m].value;
                 if (chartStack[m].value < minValue && chartStack[m].value != 0) minValue = chartStack[m].value;
             }
@@ -200,7 +200,7 @@ window.renderTemplate = function(alias, data) {
             function getColumnHeight(value, maxValue) {
                 if(value != 0) {
                     let columnHeightRelativeScale = (value * 100) / maxValue;
-                    let columnHeight = columnHeightRelativeScale * 69 / 100;
+                    let columnHeight = (columnHeightRelativeScale) * 69 / 100;
                     return columnHeight.toFixed(2);
                 }
                 return 0;
@@ -236,7 +236,7 @@ window.renderTemplate = function(alias, data) {
                     <div class="chart-separator"></div>
                     <div class="chart-user flex">
                         <img class="chart-avatar" src='${avatarSrc}${data.users[1].avatar}'>
-                        <div class="chart-usersInfo">
+                        <div class="chart-usersInfo flex flex-d-column j-c-center">
                             <div class="chart-name">${data.users[1].name}</div>
                             <div class="chart-count">${data.users[1].valueText}</div>
                         </div>
