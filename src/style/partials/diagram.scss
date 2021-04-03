@@ -28,7 +28,7 @@
   height: 100vh;
 
   &-titlesWrapper {
-    margin-top: 1.2rem;
+    margin-top: 1.25rem;
     width: 35.25rem;
     margin-bottom: 1.75rem;
   }
@@ -49,7 +49,7 @@
   }
 
   &-legend {
-    margin-top: 2.25rem
+    margin-top: 2rem;
   }
 
   &-content {
@@ -141,6 +141,10 @@
     top: 33%;
     left: 13%;
   }
+
+  &-itemsWrapper:nth-child(4) {
+    border: none;
+  }
 }
 
 
@@ -164,7 +168,7 @@
     &-circle {
       width: 22.375rem;
       justify-content: center;
-      margin: 0 0 1.563rem;
+      margin: 0 0 1.5rem;
     }
 
     &-svg {

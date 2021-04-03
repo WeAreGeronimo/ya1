@@ -738,11 +738,11 @@ window.renderTemplate = function(alias, data) {
                    <div class="diagram-legend flex flex-d-column">
                        ${dataCategCombined.map(item => {
                             return `<div class="diagram-itemsWrapper flex j-c-space-between">
-                                        <div class="diagram-left flex">
+                                        <div class="diagram-left flex a-i-center">
                                             <div class="diagram-dot"></div>
                                             <div class="diagram-stringsCount">${item.title}</div>
                                         </div>
-                                        <div class="diagram-right flex">
+                                        <div class="diagram-right flex a-i-center">
                                             <div class="diagram-delta">+${item.differenceTextN}</div>
                                             <div class="diagram-totalCount">${item.valueTextN}</div>
                                         </div>
