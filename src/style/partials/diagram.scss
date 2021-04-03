@@ -26,6 +26,7 @@
 .diagram {
   background: var(--main-bg-color);
   height: 100vh;
+  justify-content: space-between;
 
   &-titlesWrapper {
     margin-top: 1.25rem;
@@ -53,7 +54,8 @@
   }
 
   &-content {
-    width: 36.5rem
+    width: 36.5rem;
+    margin-bottom: 1.75rem;
   }
 
   &-dot {
@@ -163,6 +165,8 @@
       flex-direction: column;
       margin: 0 auto;
       width: unset;
+      height: 86%;
+      justify-content: space-evenly;
     }
 
     &-circle {
@@ -203,5 +207,21 @@
       margin-top: 0.375rem;
     }
 
+  }
+}
+
+@media screen and (min-height: 812px) and (orientation: portrait) {
+  .vote {
+    &-content {
+      height: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 812px) and (orientation: landscape) {
+  .vote {
+    &-content {
+      width: 100%;
+    }
   }
 }
