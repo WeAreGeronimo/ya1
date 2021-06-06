@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YandexSRI</title><link rel="stylesheet" href="stories.css"><link rel="shortcut icon" type="image/png" href="var(--favicon)/"><script type="text/javascript" src="data.json"></script><script src="stories.js"></script></head><body id="bodyHtml"><script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YandexSRI</title><link rel="stylesheet" href="stories.css"><script type="application/json" src="data.json"></script><script src="stories.js"></script></head><body id="bodyHtml"><script>
     const bodyEl = document.getElementById('bodyHtml');
 
     function  getParameter(paramsName) {
@@ -23,7 +23,7 @@
 
     }
 
-    fetch('http://localhost:8080/data.json')
+    fetch('data.json')
         .then(response => response.json())
         .then(parsedData => {
             const arrayElement = (getParameter("slide") == null) ? 0 : getParameter("slide") ;
